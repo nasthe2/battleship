@@ -27,6 +27,7 @@ class SeaBattle {
     this.pcName = null;
     this.pcDelay = 1500;
     
+    this.userFireAttempts = 0;
     this._hitsForWin = 0;
     for (let i = 0; i < this.shipsConfiguration.length; i++) {
       this._hitsForWin = +this._hitsForWin + (this.shipsConfiguration[i].maxShips * this. shipsConfiguration[i].pointCount);
@@ -369,6 +370,9 @@ class SeaBattle {
     let firedEl = e.target || e.srcElement;
     let x = firedEl.getAttribute('data-x');
     let y = firedEl.getAttribute('data-y');
+    this.userFireAttempts++;
+    console.log(this.userFireAttempts);
+
     if (this._pcShipsMap[y][x] === this.CELL_EMPTY) {
       firedEl.innerHTML = this.getFireFailTemplate();
       this.prepareToPcFire();
@@ -460,7 +464,7 @@ class SeaBattle {
     this.toolbar.innerHTML = 'Счет - ' + this._pcHits + ':' + this._userHits;
     if (this.isGameStopped()) {
       if (this._userHits >= this._hitsForWin) {
-        this.toolbar.innerHTML += ', вы победили';
+        this.toolbar.innerHTML += ', вы победили. Статистика попаданий: ' + `${this._userHits}` + '/' + `${this.userFireAttempts}`;
       } else {
         this.toolbar.innerHTML += ', победил ваш противник';
       }
