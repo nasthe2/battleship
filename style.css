@@ -3,10 +3,11 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.4;
   color: #333;
   background-color: #fff;
@@ -17,6 +18,7 @@ body {
   max-width: 600px;
   padding: 15px;
 }
+
 #gameArea .pcGameArea, #gameArea .userGameArea{
   width: 50%;
   float:left;
@@ -25,11 +27,13 @@ body {
   display: block;
   margin-bottom: 20px;
 }
+
 #gameArea .gameField{
   margin: 5px 15px 0 0;
   display: block;
   padding:0;
 }
+
 #gameArea .gameField div{
   margin: -1px;
   display: block;
@@ -40,13 +44,16 @@ body {
   text-align: center;
   color: #F44336;
 }
+
 #gameArea .gameField div .badge{
   font-size: 2em;
   color: #F44336;
 }
+
 #gameArea .gameField .ship{
   background-color: #7bc4ff;
 }
+
 #gameArea .btn{
   display: inline-block;
   margin-bottom: 0;
